@@ -6,7 +6,9 @@ const imageminPngquant = require('imagemin-pngquant');
 	const files = await imagemin(['src/images/*.{jpg,png}'], {
 		destination: 'dist/images',
 		plugins: [
-			imageminJpegtran(),
+			imageminJpegtran({
+				quality: [0, 0.05]
+			}),
 			imageminPngquant({
 				quality: [0, 0.05]
 			})
